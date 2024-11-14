@@ -2,39 +2,52 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5%;
+    margin: 2%;
     background-color: rgba(0, 0, 0, 0.932);
+    /* background-color: white; */
     font-family: monospace;
 }
 
 #sundial {
-    color: white;
-    padding: 5%;
+    color: greenyellow;
+    padding: 2%;
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 10%;
+
 }
 
-h1 {
+#stopwatch {
+    color: rgb(233, 251, 207);
+    padding: 2%;
+}
+
+#pomodoro {
     color: rgb(177, 64, 243);
-    padding: 5%;
+    padding: 2%;
+    margin-top: 10%;
 }
 
 .container {
     /* max-width: 1200px; */
-    width: 50%;
+    width: 70%;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid;
+    /* border: solid;
     border-color: white;
-    border-radius: 7vh;
-    padding: 5%;
+    border-radius: 7vh; */
 }
 
 /* Stopwatch */
 
 .stopwatch-container {
     /* max-width: 1200px; */
-    width: 80%;
+    background-color: rgba(0, 0, 0, 0.279);
+    width: 90%;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -42,17 +55,23 @@ h1 {
     border: solid;
     border-color: white;
     border-radius: 7vh;
-    padding: 5%;
+    padding: 1%;
+    background-image: url("myclock.png");
+    background-size: 15vw 10vh;
+    background-repeat: no-repeat;
+    background-position: left top;
 }
 .stopwatch-container:hover {
-    background-color: rgba(56, 59, 53, 0.411);
+    background-color: rgba(56, 59, 53, 0.624);
 }
 
 .stopwatch {
     /* max-width: 1200px; */
     color: greenyellow;
-    font-size:3vh;
+    font-size:4vh;
     font-weight: 700;
+    display:flex;
+    justify-content: center;
 }
 
 .stopwatch-btns {
@@ -61,8 +80,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
-    padding: 5%;
+    gap: 10%;
+    padding: 10%;
 }
 .stopwatch-btns > button {
     color: white;
@@ -79,7 +98,7 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 4%;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 .stopwatch-btns > button:hover {
     color: rgba(0, 0, 0, 0.932);
@@ -90,7 +109,8 @@ h1 {
 
 .timer-container {
     /* max-width: 1200px; */
-    width: 80%;
+    background-color: rgba(0, 0, 0, 0.279);
+    width: 90%;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -98,11 +118,15 @@ h1 {
     border: solid;
     border-color: white;
     border-radius: 7vh;
-    padding: 5%;
-    margin-top: 20%;
+    padding: 1%;
+    margin-top: 5%;
+    background-image: url("mytomato4.png");
+    background-size: 17vw 18vh;
+    background-repeat: no-repeat;
+    background-position: right top;
 }
 .timer-container:hover {
-    background-color: rgba(56, 59, 53, 0.411);
+    background-color: rgba(177, 64, 243, 0.135);
 }
 
 .timer-type {
@@ -110,15 +134,16 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
-    padding: 5%;
+    gap: 10%;
+    margin-bottom: 5%;
 }
 
 .timer-type > button {
     color: white;
-    background-color: rgba(0, 0, 0, 0.932);
+    font-weight: 700;
+    background-color: rgba(177, 64, 243, 0.281);
     /* max-width: 1200px; */
-    font-size: 1.5vh;
+    font-size: 2vh;
     border: solid;
     border-width: 0.3vh;
     border-color: greenyellow;
@@ -127,31 +152,45 @@ h1 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 4%;
-    transition: all 0.4s ease-in-out;
+    padding: 5%;
+    transition: all 0.3s ease-in-out;
 }
 .timer-type > button:hover {
-    color: rgba(0, 0, 0, 0.932);
-    background-color: greenyellow;
+    background-color: rgba(177, 64, 243, 0.753);
     cursor: pointer;
 }
 
-.timer {
+.study-timer {
     /* max-width: 1200px; */
     color: greenyellow;
-    font-size:3vh;
+    font-size:4vh;
     font-weight: 700;
 }
-.timer-btns {
+
+.short-timer {
+    /* max-width: 1200px; */
+    color: greenyellow;
+    font-size:4vh;
+    font-weight: 700;
+}
+
+.long-timer {
+    /* max-width: 1200px; */
+    color: greenyellow;
+    font-size:4vh;
+    font-weight: 700;
+}
+
+.startStopPom-btns {
     /* max-width: 1200px; */
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
-    padding: 5%;
+    gap: 10%;
+    padding: 10%;
 }
-.timer-btns > button {
+.startStopPom-btns > button {
     color: white;
     background-color: rgba(0, 0, 0, 0.932);
     /* max-width: 1200px; */
@@ -166,9 +205,9 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 4%;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
-.timer-btns > button:hover {
+.startStopPom-btns > button:hover {
     color: rgba(0, 0, 0, 0.932);
     background-color: greenyellow;
     cursor: pointer;

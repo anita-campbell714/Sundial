@@ -2,13 +2,15 @@ let seconds = 0;
 let minutes = 0;
 let hours = 0;
 
+// S: Stopwatch
+let stopwatch = document.querySelector(".stopwatch");
+
 let startS = document.getElementById("start-stopwatch");
 let pauseS = document.getElementById("pause-stopwatch");
 let resetS = document.getElementById("reset-stopwatch");
 
 let stopStatus = 0;
 
-let stopwatch = document.querySelector(".stopwatch");
 
 startS.addEventListener("click", () => {
     if(stopStatus!==0){
@@ -42,3 +44,39 @@ resetS.addEventListener("click", () => {
     hours = 0
     stopwatch.innerHTML = "00h : 00m : 00s"
 })
+
+// P: Pomodoro
+let pomodoro = document.querySelector("study-timer")
+let shortP = document.getElementById("short-timer")
+let longP = document.getElementById("long-timer")
+
+
+function showPomodoroTimer() {
+    pomodoro.style.display = "block";
+    shortP.style.display = "none";
+    longP.style.display = "none";
+}
+showPomodoroTimer()
+
+let currentTimer = null;
+
+pomodoro.addEventListener("click", showPomodoroTimer());
+
+
+// function showShortTimer() {
+//     pomodoro.style.display = "none";
+//     shortP.style.display = "block";
+//     longP.style.display = "none"
+// }
+// showShortTimer()
+// pomodoro.addEventListener("click", showShortTimer());
+
+
+
+// function showLongTimer() {
+//     pomodoro.style.display = "none";
+//     shortP.style.display = "none";
+//     longP.style.display = "block";
+// }
+// showLongTimer()
+// pomodoro.addEventListener("click", showLongTimer());
