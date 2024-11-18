@@ -45,38 +45,60 @@ resetS.addEventListener("click", () => {
     stopwatch.innerHTML = "00h : 00m : 00s"
 })
 
+
 // P: Pomodoro
-let pomodoro = document.querySelector("study-timer")
+let pomodoro = document.getElementById("study-timer")
 let shortP = document.getElementById("short-timer")
 let longP = document.getElementById("long-timer")
 
+let currentTimer = null;
 
-function showPomodoroTimer() {
+function showDefaultTimer() {
     pomodoro.style.display = "block";
     shortP.style.display = "none";
     longP.style.display = "none";
 }
-showPomodoroTimer()
+showDefaultTimer();
 
-let currentTimer = null;
+function hideAllTimers() {
+    let timers = document.querySelectorAll(".show-timer")
+    timers.forEach((timer) => {
+        timer.style.display = "none"
+    })
+}
 
-pomodoro.addEventListener("click", showPomodoroTimer());
+function clickPomodoro() {
+    hideAllTimers();
+    pomodoro.style.display = "block"
+    currentTimer = pomodoro
+}
 
+function clickShort() {
+    hideAllTimers();
+    shortP.style.display = "block"
+    currentTimer = shortP
+}
 
-// function showShortTimer() {
-//     pomodoro.style.display = "none";
-//     shortP.style.display = "block";
-//     longP.style.display = "none"
-// }
-// showShortTimer()
-// pomodoro.addEventListener("click", showShortTimer());
+function clickLong() {
+    hideAllTimers();
+    longP.style.display = "block"
+    currentTimer = longP
+}
 
+const pomBtnElement = document.getElementById("pomBtn")
 
+const shortBtnElement = document.getElementById("shortBtn")
 
-// function showLongTimer() {
-//     pomodoro.style.display = "none";
-//     shortP.style.display = "none";
-//     longP.style.display = "block";
-// }
-// showLongTimer()
-// pomodoro.addEventListener("click", showLongTimer());
+const longBtnElement = document.getElementById("longBtn")
+
+if(pomBtnElement) {
+    pomBtnElement.addEventListener("click", clickPomodoro());
+}
+
+if(shortBtnElement) {
+    shortBtnElement.addEventListener("click", clickShort());
+}
+
+if(longBtnElement) {
+    longBtnElement.addEventListener("click", clickLong())
+}
