@@ -37,9 +37,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: solid;
-    border-color: white;
-    border-radius: 7vh; */
 }
 
 /* Stopwatch */
@@ -174,6 +171,7 @@ body {
     color: greenyellow;
     font-size:4vh;
     font-weight: 700;
+    margin-top: 5%;
 }
 
 #long-timer {
@@ -181,6 +179,7 @@ body {
     color: greenyellow;
     font-size:4vh;
     font-weight: 700;
+    margin-top: 5%;
 }
 
 .startStopPom-btns {

@@ -1,12 +1,12 @@
-let seconds = 0;
-let minutes = 0;
 let hours = 0;
+let minutes = 0;
+let seconds = 0;
 
 // S: Stopwatch
 let stopwatch = document.querySelector(".stopwatch");
 
 let startS = document.getElementById("start-stopwatch");
-let pauseS = document.getElementById("pause-stopwatch");
+let stopS = document.getElementById("stop-stopwatch");
 let resetS = document.getElementById("reset-stopwatch");
 
 let stopStatus = 0;
@@ -33,7 +33,7 @@ startS.addEventListener("click", () => {
     }, 1000)
 })
 
-pauseS.addEventListener("click", () => {
+stopS.addEventListener("click", () => {
     clearInterval(stopStatus)
 })
 
@@ -47,11 +47,11 @@ resetS.addEventListener("click", () => {
 
 
 // P: Pomodoro
+let currentTimer = null;
+
 let pomodoro = document.getElementById("study-timer")
 let shortP = document.getElementById("short-timer")
 let longP = document.getElementById("long-timer")
-
-let currentTimer = null;
 
 function showDefaultTimer() {
     pomodoro.style.display = "block";
@@ -60,6 +60,7 @@ function showDefaultTimer() {
 }
 showDefaultTimer();
 
+
 function hideAllTimers() {
     let timers = document.querySelectorAll(".show-timer")
     timers.forEach((timer) => {
@@ -67,38 +68,33 @@ function hideAllTimers() {
     })
 }
 
-function clickPomodoro() {
+document.getElementById("studyBtn").addEventListener("click", function() {
     hideAllTimers();
     pomodoro.style.display = "block"
     currentTimer = pomodoro
-}
+})
 
-function clickShort() {
+document.getElementById("shortBtn").addEventListener("click", function() {
     hideAllTimers();
     shortP.style.display = "block"
     currentTimer = shortP
-}
+})
 
-function clickLong() {
+document.getElementById("longBtn").addEventListener("click", function() {
     hideAllTimers();
     longP.style.display = "block"
     currentTimer = longP
+})
+
+let myInterval = null;
+
+function startTimer(timerDisplay) {
+    if(myInterval) {
+        clearInterval(myInterval);
+    }
+    timerDuration = timerDisplay.getAttribute("dataDuration").split(":")[0]
+    console.log(timerDuration)
 }
 
-const pomBtnElement = document.getElementById("pomBtn")
 
-const shortBtnElement = document.getElementById("shortBtn")
-
-const longBtnElement = document.getElementById("longBtn")
-
-if(pomBtnElement) {
-    pomBtnElement.addEventListener("click", clickPomodoro());
-}
-
-if(shortBtnElement) {
-    shortBtnElement.addEventListener("click", clickShort());
-}
-
-if(longBtnElement) {
-    longBtnElement.addEventListener("click", clickLong())
-}
+console.log(typeof(pomodoro.innerHTML))
