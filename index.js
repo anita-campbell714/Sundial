@@ -72,29 +72,56 @@ document.getElementById("studyBtn").addEventListener("click", function() {
     hideAllTimers();
     pomodoro.style.display = "block"
     currentTimer = pomodoro
+    console.log(currentTimer.innerHTML)
+
 })
 
 document.getElementById("shortBtn").addEventListener("click", function() {
     hideAllTimers();
     shortP.style.display = "block"
     currentTimer = shortP
+    console.log(currentTimer.innerHTML)
+
 })
 
 document.getElementById("longBtn").addEventListener("click", function() {
     hideAllTimers();
     longP.style.display = "block"
     currentTimer = longP
+    console.log(currentTimer.innerHTML)
 })
 
-let myInterval = null;
+// let myInterval = null;
 
-function startTimer(timerDisplay) {
-    if(myInterval) {
-        clearInterval(myInterval);
+// function startTimer(timerDisplay) {
+//     if(myInterval) {
+//         clearInterval(myInterval);
+//     }
+//     timerDuration = timerDisplay.getAttribute("dataDuration").split(":")[0]
+//     console.log(getAttribute("dataDuration"))
+// }
+let pomodoroMinutes = currentTimer.innerHTML;
+let pomodoroSeconds = 0;
+let startPomodoroTimer = document.getElementById("start-timerBtn");
+let stopPomodoroTimer = document.getElementById("stop-timerBtn");
+let resetPomodoroTimer = document.getElementById("reset-timer");
+
+let stopPomodoroStatus = 0;
+
+startPomodoroTimer.addEventListener("click", () => {
+    if(stopPomodoroStatus !==0){
+        clearInterval(stopPomodoroStatus)
     }
-    timerDuration = timerDisplay.getAttribute("dataDuration").split(":")[0]
-    console.log(timerDuration)
-}
+    stopPomodoroStatus = setInterval(() => {
+        pomodoroSeconds--;
+        if (pomodoroSeconds === 0) {
+            pomodoroSeconds = 59
+            pomodoroMinutes--
+        }
 
-
-console.log(typeof(pomodoro.innerHTML))
+    let mP = pomodoroMinutes < 10 ? ("0" + minutes) : pomodoroMinutes;
+    let sP = pomodoroSeconds < 10 ?("0" + pomodoroSeconds) : pomodoroSeconds;
+    document.querySelectorAll(".show-timer").innerHTML = `${mP}m : ${sP}s`
+    }, 1000)
+    
+})
