@@ -53,6 +53,8 @@ let pomodoro = document.getElementById("study-timer")
 let shortP = document.getElementById("short-timer")
 let longP = document.getElementById("long-timer")
 
+let pomodoroStopStatus = 0
+
 function showDefaultTimer() {
     pomodoro.style.display = "block";
     shortP.style.display = "none";
@@ -68,60 +70,82 @@ function hideAllTimers() {
     })
 }
 
+let selectedTimer = []
+
 document.getElementById("studyBtn").addEventListener("click", function() {
+    console.log("Study Timer has been selected")
     hideAllTimers();
     pomodoro.style.display = "block"
     currentTimer = pomodoro
-    console.log(currentTimer.innerHTML)
-
 })
 
 document.getElementById("shortBtn").addEventListener("click", function() {
+    console.log("Short Break has been selected")
     hideAllTimers();
     shortP.style.display = "block"
     currentTimer = shortP
-    console.log(currentTimer.innerHTML)
-
 })
 
 document.getElementById("longBtn").addEventListener("click", function() {
+    console.log("Long Break has been selected")
     hideAllTimers();
     longP.style.display = "block"
     currentTimer = longP
-    console.log(currentTimer.innerHTML)
 })
 
-// let myInterval = null;
+console.log(selectedTimer)
 
-// function startTimer(timerDisplay) {
-//     if(myInterval) {
-//         clearInterval(myInterval);
-//     }
-//     timerDuration = timerDisplay.getAttribute("dataDuration").split(":")[0]
-//     console.log(getAttribute("dataDuration"))
-// }
-let pomodoroMinutes = currentTimer.innerHTML;
-let pomodoroSeconds = 0;
-let startPomodoroTimer = document.getElementById("start-timerBtn");
-let stopPomodoroTimer = document.getElementById("stop-timerBtn");
-let resetPomodoroTimer = document.getElementById("reset-timer");
+let myInterval = null;
 
-let stopPomodoroStatus = 0;
-
-startPomodoroTimer.addEventListener("click", () => {
-    if(stopPomodoroStatus !==0){
-        clearInterval(stopPomodoroStatus)
+function startTimer(timerDisplay) {
+    if(myInterval) {
+        clearInterval(myInterval);
     }
-    stopPomodoroStatus = setInterval(() => {
-        pomodoroSeconds--;
-        if (pomodoroSeconds === 0) {
-            pomodoroSeconds = 59
-            pomodoroMinutes--
-        }
 
-    let mP = pomodoroMinutes < 10 ? ("0" + minutes) : pomodoroMinutes;
-    let sP = pomodoroSeconds < 10 ?("0" + pomodoroSeconds) : pomodoroSeconds;
-    document.querySelectorAll(".show-timer").innerHTML = `${mP}m : ${sP}s`
+    timerDuration = timerDisplay.getAttribute("data-duration").split(":")[0]
+
+    let durationInMiliseconds = timerDuration * 60 * 1000
+    let endTimestamp = Date.now() + durationInMiliseconds
+
+    myInterval = setInterval(function() {
+        const timeRemaining = new Date(endTimestamp - Date.now());
+        
+        if (timeRemaining <= 0) {
+            clearInterval(myInterval);
+            timerdisplay.textContent = "00m : 00s";
+
+            const alarm = new Audio("https://freespecialeffects.co.uk/soundfx/music/drum_01.wav");
+            alarm.play();
+        } else {
+            const minutes = Math.floor(timeRemaining / 60000);
+
+            const seconds = ((timeRemaining % 60000) / 1000).toFixed(0);
+            const formattedTime = `${minutes}m : ${seconds.toString().padStart(2, '0')}s`;
+
+            timerDisplay.textContent = formattedTime;
+        }
     }, 1000)
-    
+}
+
+document.getElementById("start-timerBtn").addEventListener("click", function () {
+    if (currentTimer) {
+        startTimer(currentTimer);
+        document.getElementById("timer-message").style.display = "none";
+    } else {
+        document.getElementById("timer-message").style.display = "block";
+    }
+});
+
+document.getElementById("stop-timerBtn").addEventListener("click", function () {
+if (currentTimer) {
+    clearInterval(myInterval);
+}
+});
+
+// let allTimers = document.getElementById(".show-timer")
+
+document.getElementById("reset-timer").addEventListener("click", function () {
+    clearInterval(stopStatus)
+    allTimers.innerHTML = currentTimer
 })
+
