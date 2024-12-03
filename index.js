@@ -52,15 +52,15 @@ let currentTimer = null;
 let pomodoro = document.getElementById("study-timer")
 let shortP = document.getElementById("short-timer")
 let longP = document.getElementById("long-timer")
+let timerMessage = document.getElementById("timer-message")
 
-let pomodoroStopStatus = 0
-
-function showDefaultTimer() {
-    pomodoro.style.display = "block";
+function showDefaultMessage() {
+    pomodoro.style.display = "none";
     shortP.style.display = "none";
     longP.style.display = "none";
+    timerMessage.style.display = "block"
 }
-showDefaultTimer();
+showDefaultMessage();
 
 
 function hideAllTimers() {
@@ -70,7 +70,8 @@ function hideAllTimers() {
     })
 }
 
-let selectedTimer = []
+let myInterval = null;
+let selectedTimer;
 
 document.getElementById("studyBtn").addEventListener("click", function() {
     console.log("Study Timer has been selected")
@@ -92,10 +93,6 @@ document.getElementById("longBtn").addEventListener("click", function() {
     longP.style.display = "block"
     currentTimer = longP
 })
-
-console.log(selectedTimer)
-
-let myInterval = null;
 
 function startTimer(timerDisplay) {
     if(myInterval) {
@@ -142,10 +139,26 @@ if (currentTimer) {
 }
 });
 
-// let allTimers = document.getElementById(".show-timer")
-
 document.getElementById("reset-timer").addEventListener("click", function () {
-    clearInterval(stopStatus)
-    allTimers.innerHTML = currentTimer
+    clearInterval(myInterval)
+    let originalTimer = currentTimer.getAttribute("data-duration")
+
+    if(originalTimer === "25.00") {
+        currentTimer.innerHTML = "25m : 00s"
+    }
+    else if(originalTimer === "5.00") {
+        currentTimer.innerHTML = "5m : 00s"
+    }
+    else if(originalTimer === "10.00") {
+        currentTimer.innerHTML = "10m : 00s"
+    }
 })
 
+
+//Notepad
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
