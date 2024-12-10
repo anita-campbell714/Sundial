@@ -50,23 +50,21 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 166.28675567746234,
-			"y": 252.24141157627105,
-			"lastActivityTimestamp": 1733784785624,
+			"x": 192.9000018501282,
+			"y": 155.10000912189474,
+			"lastActivityTimestamp": 1733789929663,
 			"meta": {}
 		},
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:font": "draw",
-				"tldraw:geo": "rectangle",
-				"tldraw:color": "orange"
+				"tldraw:size": "s"
 			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "default",
+				"type": "move",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -94,7 +92,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 0.8333333134651184,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": false,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -107,7 +105,11 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
+			"selectedShapeIds": [
+				"shape:yKCTzPX2YMlZKL-3I_wq6",
+				"shape:KK8IueFtySjbSCUbiJA-k",
+				"shape:FirP9OREBUUbvwsDc1mCF"
+			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -118,44 +120,21 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -165.08441185593676,
-			"y": -233.56406630039214,
-			"z": 8,
+			"x": -133.20000108718875,
+			"y": -81.00000301837912,
+			"z": 4,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": 183.61875915527344,
-			"y": 261.6187553405762,
+			"x": 176.2617590391643,
+			"y": 138.05389822483062,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
 			"meta": {},
-			"id": "shape:D1NcnL2PhTh4cEoBIvLlu",
-			"type": "text",
-			"props": {
-				"color": "orange",
-				"size": "m",
-				"w": 16,
-				"text": "B",
-				"font": "draw",
-				"textAlign": "start",
-				"autoSize": true,
-				"scale": 1
-			},
-			"parentId": "page:page",
-			"index": "a1",
-			"typeName": "shape"
-		},
-		{
-			"x": 177.0867559874065,
-			"y": 261.69141043186187,
-			"rotation": 0,
-			"isLocked": false,
-			"opacity": 1,
-			"meta": {},
-			"id": "shape:zD6d4LIgbdHuSzDtn0Qrp",
+			"id": "shape:8dRZq32rmXYJszPxRlKC0",
 			"type": "geo",
 			"props": {
 				"w": 28.047658920288086,
@@ -175,7 +154,109 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a24Rr",
+			"index": "a1",
+			"typeName": "shape"
+		},
+		{
+			"x": 185.5303369763918,
+			"y": 162.4592551047659,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:yKCTzPX2YMlZKL-3I_wq6",
+			"type": "line",
+			"props": {
+				"dash": "draw",
+				"size": "s",
+				"color": "orange",
+				"spline": "line",
+				"points": {
+					"a1": {
+						"id": "a1",
+						"index": "a1",
+						"x": -1.4170887582463767,
+						"y": -0.48163869157402794
+					},
+					"a251a": {
+						"id": "a251a",
+						"index": "a251a",
+						"x": 7.714781182404812,
+						"y": -0.14127928923124156
+					}
+				},
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a215l",
+			"typeName": "shape"
+		},
+		{
+			"x": 185.25491030187644,
+			"y": 145.12668684458285,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:KK8IueFtySjbSCUbiJA-k",
+			"type": "line",
+			"props": {
+				"dash": "draw",
+				"size": "s",
+				"color": "orange",
+				"spline": "line",
+				"points": {
+					"a1": {
+						"id": "a1",
+						"index": "a1",
+						"x": 1.5969001880263953,
+						"y": -0.20764397237000085
+					},
+					"a251a": {
+						"id": "a251a",
+						"index": "a251a",
+						"x": 11.597860738325446,
+						"y": -0.34463784789583113
+					}
+				},
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a3Ba3",
+			"typeName": "shape"
+		},
+		{
+			"x": 187.44832962546755,
+			"y": 161.91125752015233,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:FirP9OREBUUbvwsDc1mCF",
+			"type": "line",
+			"props": {
+				"dash": "draw",
+				"size": "s",
+				"color": "orange",
+				"spline": "line",
+				"points": {
+					"a1": {
+						"id": "a1",
+						"index": "a1",
+						"x": 0,
+						"y": 0
+					},
+					"a231w": {
+						"id": "a231w",
+						"index": "a231w",
+						"x": 4.152799313647802,
+						"y": -15.485220481837219
+					}
+				},
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a46Uf",
 			"typeName": "shape"
 		}
 	]

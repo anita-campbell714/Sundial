@@ -253,12 +253,18 @@ body {
 .notesHeader {
     /* max-width: 1200px; */
     color: rgb(251, 199, 174);
-    font-size:3vh;
+    font-size: 7vh;
     font-weight: 700;
     margin-top: 10%;
     margin-bottom: 1%;
 }
 
+#date {
+    color: white;
+    margin-bottom: 10%;
+    font-size:3vh;
+    font-weight: 700;
+}
 
 #title-container {
     padding: 5%;
@@ -271,13 +277,6 @@ body {
 #title-container > label {
     color: white;
     margin-bottom: 5%;
-}
-
-#date {
-    color: white;
-    margin-bottom: 10%;
-    font-size:3vh;
-    font-weight: 700;
 }
 
 #title-box {
@@ -349,18 +348,91 @@ input::placeholder {
     font-size: 12px;
 }
 
+.icons-container {
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    width: 90%;
+    margin-bottom: 5%;
+}
 
 #bold-button {
-    padding: 8%;
+    padding: 11%;
     border-radius: 1vh;
     background-color: rgb(245, 233, 220);
     background-image: url("myboldicon2.png");
-    background-size: 80px 80px;
+    background-size: 100px 100px;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #bold-button:hover {
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#italics-button {
+    padding: 11%;
+    border-radius: 1vh;
+    background-color: rgb(245, 233, 220);
+    background-image: url("myitalicsicon.png");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#italics-button:hover {
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#underline-button {
+    padding: 11%;
+    border-radius: 1vh;
+    background-color: rgb(245, 233, 220);
+    background-image: url("myunderlineicon.png");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#underline-button:hover {
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#bulletpoint-button {
+    padding: 11%;
+    border-radius: 1vh;
+    background-color: rgb(245, 233, 220);
+    /* background-image: url("mybulletpointicon.png"); */
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bulletpoint-button:hover {
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#font-button {
+    padding: 11%;
+    border-radius: 1vh;
+    background-color: rgb(245, 233, 220);
+    /* background-image: url("myfonticon.png"); */
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#font-button:hover {
     background-color: white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
