@@ -153,12 +153,3 @@ document.getElementById("reset-timer").addEventListener("click", function () {
         currentTimer.innerHTML = "10m : 00s"
     }
 })
-
-
-//Notepad
-n =  new Date();
-y = n.getFullYear();
-m = n.getMonth() + 1;
-d = n.getDate();
-
-document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
