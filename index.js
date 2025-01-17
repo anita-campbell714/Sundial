@@ -161,23 +161,22 @@ const showStudyTimerBtn = document.getElementById("toggle-study-timer-btn")
 const myStudyTimer = document.getElementById("study-timer-outline")
 
 showStopwatchBtn.addEventListener("click", function(){
-
-    if (myStopwatch.style.display === "none") {
-        myStopwatch.style.display = "flex";
-        showStopwatchBtn.textContent = "Hide Stopwatch"
+    if (myStopwatch.style.display === "flex") {
+        myStopwatch.style.display = "none";
+        showStopwatchBtn.textContent = "Show Stopwatch"
     }
     else {
-        myStopwatch.style.display = "none";
-        showStopwatchBtn.textContent = "Show Stopwatch"}
+        myStopwatch.style.display = "flex";
+        showStopwatchBtn.textContent = "Hide Stopwatch"}
     })
 
 showStudyTimerBtn.addEventListener("click", function(){
-    if (myStudyTimer.style.display === "none") {
-        myStudyTimer.style.display = "flex";
-        showStudyTimerBtn.textContent = "Hide Stopwatch"
-    }
-    else {
+    if (myStudyTimer.style.display === "flex") {
         myStudyTimer.style.display = "none";
         showStudyTimerBtn.textContent = "Show Study Timer"
+    }
+    else {
+        myStudyTimer.style.display = "flex";
+        showStudyTimerBtn.textContent = "Hide Study Timer"
     }
 })
