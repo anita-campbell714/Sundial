@@ -9,40 +9,46 @@
 <body>
     <div class="container">
         <h1 id="sundial">SUNDIAL</h1>
-        <div class="stopwatch-container">
-            <h1 id="stopwatchTitle">Stopwatch</h1>
-            <div class="stopwatch">
-                00h : 00m : 00s
-            </div>
-            <div class="startStopwatch-btns">
-                <button id="start-stopwatch">START</button>
-                <button id="stop-stopwatch">STOP</button>
-                <button id="reset-stopwatch">RESET</button>
+        <div id="stopwatch-container">
+            <button id="toggle-stopwatch-btn">Hide Stopwatch</button>
+            <div id="stopwatch-outline">
+                <h1 id="stopwatchTitle">Stopwatch</h1>
+                <div class="stopwatch">
+                    00h : 00m : 00s
+                </div>
+                <div class="startStopwatch-btns">
+                    <button id="start-stopwatch">START</button>
+                    <button id="stop-stopwatch">STOP</button>
+                    <button id="reset-stopwatch">RESET</button>
+                </div>
             </div>
         </div>
-        
-        <div class="timer-container">
-            <h1 id="pomodoro">Pomodoro Study Timer</h1>
-            <div class="timer-type">
-                <button id="studyBtn">Study Timer</button>
-                <button id="shortBtn">Short Break</button>
-                <button id="longBtn">Long Break</button>
+
+        <div id="timer-container">
+            <button id="toggle-study-timer-btn">Hide Study Timer</button>
+            <div id="study-timer-outline">
+                <h1 id="pomodoro">Pomodoro Study Timer</h1>
+                <div class="timer-type">
+                    <button id="studyBtn">Study Timer</button>
+                    <button id="shortBtn">Short Break</button>
+                    <button id="longBtn">Long Break</button>
+                </div>
+                <div id="timer-message">Select a timer from above to start.</div>
+                <div id="study-timer" class="show-timer" data-duration="25.00">
+                    25m : 00s
+                </div>
+                <div id="short-timer" class="show-timer" data-duration="5.00">
+                    5m : 00s
+                </div>
+                <div id="long-timer" class="show-timer" data-duration="10.00">
+                    10m : 00s
+                </div>
+                <div class="startStopPom-btns">
+                    <button id="start-timerBtn">START</button>
+                    <button id="stop-timerBtn">STOP</button>
+                    <button id="reset-timer">RESET</button>
+                </div>
             </div>
-            <div id="timer-message">Select a timer from above to start.</div>
-            <div id="study-timer" class="show-timer" data-duration="25.00">
-                25m : 00s
-            </div>
-            <div id="short-timer" class="show-timer" data-duration="5.00">
-                5m : 00s
-            </div>
-            <div id="long-timer" class="show-timer" data-duration="10.00">
-                10m : 00s
-            </div>
-            <div class="startStopPom-btns">
-                <button id="start-timerBtn">START</button>
-                <button id="stop-timerBtn">STOP</button>
-                <button id="reset-timer">RESET</button>
-            </div>
-    <script src="index.js"></script>
-</body>
+        </body>
+        <script src="index.js"></script>
 </html>

@@ -153,3 +153,31 @@ document.getElementById("reset-timer").addEventListener("click", function () {
         currentTimer.innerHTML = "10m : 00s"
     }
 })
+
+const showStopwatchBtn = document.getElementById("toggle-stopwatch-btn")
+const myStopwatch = document.getElementById("stopwatch-outline")
+
+const showStudyTimerBtn = document.getElementById("toggle-study-timer-btn")
+const myStudyTimer = document.getElementById("study-timer-outline")
+
+showStopwatchBtn.addEventListener("click", function(){
+
+    if (myStopwatch.style.display === "none") {
+        myStopwatch.style.display = "flex";
+        showStopwatchBtn.textContent = "Hide Stopwatch"
+    }
+    else {
+        myStopwatch.style.display = "none";
+        showStopwatchBtn.textContent = "Show Stopwatch"}
+    })
+
+showStudyTimerBtn.addEventListener("click", function(){
+    if (myStudyTimer.style.display === "none") {
+        myStudyTimer.style.display = "flex";
+        showStudyTimerBtn.textContent = "Hide Stopwatch"
+    }
+    else {
+        myStudyTimer.style.display = "none";
+        showStudyTimerBtn.textContent = "Show Study Timer"
+    }
+})
