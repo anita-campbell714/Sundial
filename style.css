@@ -30,8 +30,9 @@ body {
 
 #pomodoro {
     color: rgb(177, 64, 243);
-    padding: 2%;
-    margin-top: 7%;
+    padding: 1%;
+    margin-top: 8%;
+    margin-bottom: 8%;
 }
 
 #timer-message {

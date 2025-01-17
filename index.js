@@ -163,7 +163,7 @@ const myStudyTimer = document.getElementById("study-timer-outline")
 showStopwatchBtn.addEventListener("click", function(){
     if (myStopwatch.style.display === "flex") {
         myStopwatch.style.display = "none";
-        showStopwatchBtn.textContent = "Show Stopwatch"
+        showStopwatchBtn.textContent = "Stopwatch"
     }
     else {
         myStopwatch.style.display = "flex";
@@ -173,7 +173,7 @@ showStopwatchBtn.addEventListener("click", function(){
 showStudyTimerBtn.addEventListener("click", function(){
     if (myStudyTimer.style.display === "flex") {
         myStudyTimer.style.display = "none";
-        showStudyTimerBtn.textContent = "Show Study Timer"
+        showStudyTimerBtn.textContent = "Study Timer"
     }
     else {
         myStudyTimer.style.display = "flex";
